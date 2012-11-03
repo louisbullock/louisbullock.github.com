@@ -1,0 +1,17 @@
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z0-9]+)\/?$ $1.html
+
+# Gotta have a 404 page, yo!
+
+ErrorDocument 404 /404.html
+
+# Add a trailing slash to directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !(\.)
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ([^/]+)$ $1/ [L]

@@ -1,0 +1,1254 @@
+/*----------------------------------------*/
+/*
+/* Louis Bullock Portfolio v6
+/* Codename: Ma
+/* Copyright (C) Louis Bullock 2012
+/* w: louisbullock.com.au
+/* t: @iamlouisbullock
+/*
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* RESET */
+/*----------------------------------------*/
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block}audio,canvas,video{display:inline-block;*display:inline;*zoom: 1;}html{font-size:100%}body,button,input,select,textarea{font-family:sans-serif;color: #333;}a{color:#00e}a:visited{color:#551a8b}a:hover{color:#06e;}a:focus{outline:thin dotted}a:hover,a:active{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold;}blockquote{margin:1em 40px}dfn{font-style:italic}mark{background:yellow;color:black;}pre,code,kbd,samp{font-family:monospace,serif;_font-family:'courier new', monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word;}q{quotes:none}q:before,q:after{content:"";content:none}small{font-size:75%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}ul,ol{margin:1em 0;padding:0 0 0 40px}dd{margin:0 0 0 40px}nav ul,nav ol{list-style:none;list-style-image:none;margin:0;padding:0;}svg:not(:root){overflow:hidden}fieldset{border:0;margin:0;padding:0;}legend{border:0;margin-left:-7px;padding:0;white-space:normal;}button,input,select,textarea{font-size:100%;vertical-align:baseline;vertical-align:middle;margin:0}button,input{line-height:normal;overflow:visible}table button,table input{overflow:auto}button,html input[type=button],input[type=reset],input[type=submit],label{cursor:pointer}input[type=checkbox],input[type=radio]{padding:0}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top;resize:vertical;}table{border-collapse:collapse;border-spacing:0}td{vertical-align:top}audio:not([controls]),[hidden]{display:none}body,figure,form{margin:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0;}ins{color:#111;text-decoration:underline;}img{border:0;-ms-interpolation-mode:bicubic;vertical-align:middle;}button,input{line-height:normal;}button,input[type=button],input[type=reset],input[type=submit]{cursor:pointer;-webkit-appearance:button;overflow:visible;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;width:13px;height:13px;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-decoration,input[type=search]::-webkit-search-cancel-button{-webkit-appearance:none;}input:valid,textarea:valid {background-color:#83FF83;}input:invalid,textarea:invalid {background-color:#FF8383;}.chromeframe{margin:.2em 0;background:#ccc;color:#000;padding:.2em 0;}em,i{font-style:italic;}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* BASICS */
+/*----------------------------------------*/
+
+/* COLOUR SCHEME */
+/*	#111 */
+/*	#888 */
+/*	#fff */
+
+html {
+	background-image: url(http://basehold.it/i/24/ff0000);
+	font-size: 100%;
+	height:100%;
+	min-height: 100%;
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+html {
+	background-image:none;
+}
+
+body {
+	font:normal normal 16px/1.5 Georgia, Times, "Times New Roman", serif;
+	color:#333;
+	/*background:white;*/
+	word-wrap: break-word;
+	outline: 0;
+	margin:0;
+	padding: 0;
+	vertical-align: baseline;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.01);
+	-moz-text-shadow: 0 0 1px rgba(0, 0, 0, 0.01);
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke: 1px transparent;
+	text-rendering:optimizeLegibility;
+	min-height: 100%;
+  	position:relative;
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* CONTAINER */
+/*----------------------------------------*/
+
+.container,
+footer[role="contentinfo"] section {
+  	margin:0 auto;
+  	position:relative;
+  	width:940px;
+}
+
+.container:after {
+  	content:" ";
+  	clear:both;
+  	height:0;
+  	display:block;
+  	visibility:hidden;
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* COLUMNS */
+/*----------------------------------------*/
+
+.col-1 {
+	float:left;
+	display:inline;
+	margin-left:0;
+	margin-right:20px;
+}
+
+.col-1 {
+	width:460px;
+}
+
+.row {
+	margin-bottom:20px;
+}
+
+.end {
+	margin-right:0;
+}
+
+/*----------------------------------------*/
+
+
+
+
+/*----------------------------------------*/
+/* HEADER, MAIN SECTION & ARTICLE */
+/*----------------------------------------*/
+
+header[role="banner"],
+section[role="main"],
+article {
+	float:left;
+}
+
+header[role="banner"] {
+	width:940px;
+	padding-top:48px;
+	margin-bottom:30px;
+}
+
+section[role="main"] {
+	/*width:460px;*/
+}
+
+article {
+	margin-bottom:72px;
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* LOGO */
+/*----------------------------------------*/
+
+h2.blog-description {
+	font-size: 16px;
+	line-height:1.5;
+	padding-top:1px;
+	/* width:130px; To keep the description nice and tight in the layout */
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* NAV */
+/*----------------------------------------*/
+
+nav[role="navigation"] h1 {
+	line-height: 1.5;
+}
+
+nav[role="navigation"] h1,
+nav[role="navigation"] li {
+	padding-top:4px;
+}
+
+nav[role="navigation"] h1 a,
+nav[role="navigation"] li a {
+	border:white;
+}
+
+nav[role="navigation"] li {
+	float:left;
+	margin:0 0 0 20px;
+}
+
+nav[role="navigation"] h1,
+nav[role="navigation"] h2,
+nav[role="navigation"] li {
+	font-size:18px;
+}
+
+nav[role="navigation"] h2 {
+	color:#888;
+}
+
+nav[role="navigation"],
+nav[role="navigation"] ul  {
+	padding:0;
+	margin:0;
+	overflow:hidden;
+}
+
+nav[role="navigation"] ul  {
+	float:right;
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------*/
+/* TYPOGRAPHY */
+/*----------------------------------------*/
+
+/* Typography - scale: 6 7 8 9 10 11 12 14 16 18 21 24 36 48 60 72 */
+
+h1,
+h2,
+h3,
+h4,
+p {
+	clear:both;
+}
+
+h1,
+h2,
+h3,
+nav[role="navigation"] h1,
+nav[role="navigation"] h2,
+nav[role="navigation"] li a {
+	color: #111;
+	font-weight:bold;
+	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+h1 {
+	font-size:36px;
+	padding-top:35px;
+	margin-bottom:13px;
+	line-height:1.34;
+}
+
+h1.rb {
+	margin-bottom:-11px;
+}
+
+h2 {
+	font-size:21px;
+	padding-top:29px;
+	margin-bottom:19px;
+	line-height:1.15;
+}
+
+h2.rb {
+	margin-bottom:-5px;
+}
+
+h3 {
+	font-size:18px;
+	padding-top:29px;
+	margin-bottom:19px;
+	line-height:1.34;
+}
+
+h3.rb {
+	margin-bottom:-5px;
+}
+
+h4 {
+	font-size:16px;
+	font-style:italic;
+	font-weight:normal;
+	padding-top:6px;/* was 30px */
+	margin-bottom:18px;
+	line-height:1.5;
+}
+
+h4.rb {
+	margin-bottom:-5px;
+}
+
+p {
+	padding-top:7px;
+	margin-bottom:17px;
+}
+
+/* Remember the ratio 13:18, for optimal header and paragraph text */
+
+mark {
+	background:#fed800;
+	color:#111;
+	padding:0.6% 1%;
+	margin:0 -1%;
+}
+
+span.amp {
+	font-family:Baskerville,'Goudy Old Style',Palatino,"Book Antiqua",Constantia,"URW Palladio L",serif;
+	font-style:italic;
+	font-weight:normal;
+	line-height:19px;
+}
+
+span.uni {
+	font-family:"Arial Unicode MS","Microsoft Sans Serif","Free Sans","Gentium Plus","Gentium Basic","Gentium","GentiumAlt","DejaVu Sans","DejaVu Serif","Free Serif","TITUS Cyberbit Basic","Bitstream Cyberbit","Bitstream CyberBase","Doulos SIL","Code2000","Code2001";
+	font-size:inherit;
+}
+
+span.caps {
+	font-size:90%;
+	line-height:20px;
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* LINKS */
+/*----------------------------------------*/
+
+a {
+	outline: none;
+	text-decoration: none;
+	background: none;
+	border: none;
+}
+
+a:link,
+a:visited
+a:hover,
+a:focus,
+a:active {
+	text-decoration:none;
+	outline: 0;
+}
+
+article a:link,
+article a:visited,
+footer[role="contentinfo"] a:link,
+footer[role="contentinfo"] a:visited,
+.scriptogram-link a:link,
+.scriptogram-link a:visited {
+	color: #0077CD;
+	border-bottom: 1px solid #BBE3FF;
+}
+
+article a:hover,
+article a:focus,
+article a:active,
+footer[role="contentinfo"] a:hover,
+footer[role="contentinfo"] a:focus,
+footer[role="contentinfo"] a:active,
+.scriptogram-link a:hover,
+.scriptogram-link a:active {
+	color: #005EA1;
+	background-color: #E4F4FF;
+	border-bottom: 1px solid #BBE3FF;
+}
+
+h1 a:link,
+h1 a:visited,
+h1 a:active,
+h2 a:link,
+h2 a:visited,
+h2 a:active,
+h3 a:link,
+h3 a:visited,
+h4 a:active,
+h4 a:link,
+h4 a:visited,
+h4 a:active {
+	outline: none;
+	text-decoration: none;
+	background: none;
+	border: white;
+	color: #111;
+	font-weight:bold;
+}
+
+h1 a:hover {
+	border-bottom: 4px solid #111;
+}
+
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+nav[role="navigation"] a.logo:hover,
+nav[role="navigation"] li a:hover {
+	border-bottom: 3px solid #111;
+}
+
+p a,
+p a:visited {
+	line-height: inherit;
+}
+
+a img,
+a img:link,
+a img:visited,
+a img:hover,
+a img:active {
+	border: none;
+	text-decoration:none;
+	outline: none;
+	background: none;
+}
+
+a.img {
+	border: none;
+	background: transparent !important;
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* LISTS */
+/*----------------------------------------*/
+
+ul.tags {
+	width: 460px;
+	border-top: 1px solid #ccc;
+	margin: 20px 0;
+	padding: 20px 0;
+}
+
+  ul.tags li {
+    list-style: none;
+}
+
+    ul.tags li a {
+	margin: 0 15px 0 0;
+	float: left;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+}
+
+/* Lists */
+
+ul, ol {
+	margin:0;
+	padding: 0 0 0 1em;
+	/* padding: 0; Uncomment this for hanging bullets */
+}
+
+li {
+	padding: 7px 0 0 0;
+	margin: 0 0 17px 0;
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* BLOCK-LEVEL ELEMENTS */
+/*----------------------------------------*/
+
+/* Remember, if you want to change something in the reset, add it here, so it overrides it, but still has the fallback */
+
+/* BLOCKQUOTE */
+
+blockquote {
+	padding-left: 1em;
+	margin:0 0 17px 0;
+	float:left;
+}
+
+blockquote p {
+	font-style:italic;
+}
+
+blockquote cite {
+	float:right;
+}
+
+hr {
+	display:block;
+	height:1px;
+	border:0;
+	border-top:1px solid #888;
+	margin:-1px 0 23px 0;
+	padding:0;
+}
+
+
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* FORMS AND INPUTS */
+/*----------------------------------------*/
+
+input:valid,
+textarea:valid {
+	color:#86A524;
+	background-color:#E5F8C9;
+}
+
+input:invalid,
+textarea:invalid {
+	color:#A62525;
+	background-color:#F8C9C9;
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* TABLES */
+/*----------------------------------------*/
+
+table {
+	border:1px solid #ddd;
+	border-collapse: separate;
+	border-left:0;
+	border-bottom:0;
+	border-spacing: 0;
+	max-width:100%;
+	width:100%;
+	margin:-1px 0 23px 0;
+	background-color:transparent;
+
+	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+thead {
+	font-weight:bold;
+	color: #111;
+}
+
+thead th {
+	vertical-align: bottom;
+}
+
+td {
+	padding:11px 1em 13px 1em;
+}
+
+th, td {
+	border-left:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	text-align:left;
+}
+
+th {
+	font-weight:bold;
+	background:#eee;
+	padding:12px 1em 11px 1em;
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* IMAGES & VIDEO */
+/*----------------------------------------*/
+
+img {
+	text-decoration: none;
+	background: none;
+	display: block;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+.ie7 img {
+	-ms-interpolation-mode: bicubic;
+}
+
+/* Scaleable Images */
+img.scale {
+	max-width:100%;
+	height:auto;
+	width:auto\9;
+}
+
+/* Image Floating */
+
+img.left,
+img.right{
+	text-align: left;
+	line-height: 1;
+	display: block;
+}
+
+img.left {
+	float: left;
+	margin: 10px 10px 20px 0;
+}
+
+img.right{
+	float: right;
+	margin: 10px 0 20px 10px;
+}
+
+.ir {
+	display:block;
+	border:0;
+	text-indent:-999em;
+	overflow:hidden;
+	background-color:transparent;
+	background-repeat:no-repeat;
+	text-align:left;
+	direction:ltr;
+	line-height:0;
+}
+
+.ir br {
+display:none;
+}
+
+.ir br {
+	display: none;
+}
+
+p img {
+	margin:0 0 24px 0;
+	padding-top:17px;
+}
+
+section img.project {
+	margin-bottom:24px;
+}
+
+/* Video */
+
+.video embed,
+.video object,
+.video iframe {
+	width: 100%;
+	height: auto;
+}
+
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+ /*----------------------------------------*/
+/* CODE PRETTIFYING FOR PRE & CODE TAGS */
+/*----------------------------------------*/
+
+pre,code,kbd,samp {
+	font-size:0.9em;
+	line-height:24px;
+	font-family:Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+	_font-family:"Courier New",monospace;
+	white-space:pre-wrap;white-space:
+	-moz-pre-wrap;white-space:
+	-o-pre-wrap;word-wrap:break-word;
+	-pre-wrap:white-space:
+}
+
+code {
+	display:-moz-inline-stack;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+}
+
+pre.prettyprint {
+	background-color: #042028;
+	padding: 7px 1em 17px 1em;
+	-webkit-text-stroke:0.6px;
+}
+
+/* Specify class="linenums" on a <pre> to get line numbering */
+
+ol.linenums {
+	color: #4c666c;
+	margin: 0 0 0 40px;
+}
+
+ol.linenums li {
+	padding: 0 0 0 1em;
+  	color: rgba(0,0,0,.15);
+  	line-height: 20px;
+  	-webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.linenums li:hover {
+  background-color: #092933;
+}
+
+/* Alternate shading for lines */
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+}
+
+/* Solarized (Dark) */
+
+.pln { color: #BD3701; }
+.str { color: #269186; }
+.kwd { color: #738A0F; }
+.com { color: #586175; font-style:italic; }
+.typ { color: #A57700; }
+.atn { color: #586175; }
+.fun { color: red; }
+.lit, .atv { color: #279086; }
+.pun, .opn, .clo { color: #576D74; }
+.tag, .dec, .var { color: #268bd2; }
+
+ /*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* FOOTER */
+/*----------------------------------------*/
+
+footer[role="contentinfo"] {
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+
+footer[role="contentinfo"] p {
+	margin-bottom:42px;
+	font-size:14px;
+	padding-top:9px;
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+ /*----------------------------------------*/
+/* DISQUS */
+/*----------------------------------------*/
+
+#dsq-global-toolbar,
+#dsq-pagination,
+#dsq-sort-by,
+#dsq-sort-select {
+	display: none;
+}
+
+.dsq-brlink {
+	margin-left: 130px;
+}
+
+#disqus-thread {
+	width: 500px !important;
+	margin-left: 130px !important;
+}
+
+#dsq-content {
+	width: 500px !important;
+	margin-left: 130px !important;
+}
+
+.dsq-textarea-reply,
+#disqus-thread {
+	font-family: Georgia, serif;
+}
+
+.dsq-textarea-background {
+	background: #fff;
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* SHARE BUTTONS*/
+/*----------------------------------------*/
+
+.share-buttons {
+	border-top: 1px solid #ccc;
+	margin: 23px 0 0 0;
+	padding: 28px 0 0 0;
+	width:100%;
+	display:-moz-inline-stack;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+}
+
+.share-buttons > .share-facebook,
+.share-buttons > .share-twitter,
+.share-buttons > .share-gplus {
+	opacity: .5;
+}
+
+.share-buttons:hover > .share-facebook,
+.share-buttons:hover > .share-twitter,
+.share-buttons:hover > .share-gplus {
+	opacity: 1;
+}
+
+.share-facebook,
+.share-twitter,
+.share-gplus {
+	float: left;
+}
+
+.share-facebook {
+	margin-right: 30px;
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* SCRIPTOGR.AM LINK */
+/*----------------------------------------*/
+
+/* Must not be removed, or hidden. This keeps the Scriptogr.am service alive and running. */
+
+.scriptogram-link {
+	position: fixed;
+	right: 40px;
+	bottom: 26px;
+	font-size: 12px;
+	float:right;
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* ANIMATION */
+/*----------------------------------------*/
+
+/* Chuck anything here that should be animated :) */
+/*
+nav[role="navigation"] h1,
+nav[role="navigation"] li,
+a:link {
+	-webkit-transition: background-color .2s, color .2s, border-color .2s;
+	-moz-transition: background-color .2s, color .2s, border-color .2s;
+	-ms-transition: background-color .2s, color .2s, border-color .2s;
+	-o-transition: background-color .2s, color .2s, border-color .2s;
+	transition: background-color .2s, color .2s, border-color .2s;
+}
+
+a:active,
+a:visited,
+a:focus {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    -ms-transition: none;
+    transition: none;
+}
+*/
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* MISC */
+/*----------------------------------------*/
+
+/* Only developers get this... */
+.whatever .yourboat {
+	float:left;
+}
+
+/* NON SEMANTIC SNIPPETS */
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden {
+	display:none!important;
+	visibility:hidden;
+}
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden {
+	border:0;
+	clip:rect(0000);
+	height:1px;
+	margin:-1px;
+	overflow:hidden;
+	padding:0;
+	position:absolute;
+	width:1px;
+}
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+	clip:auto;
+	height:auto;
+	margin:0;
+	overflow:visible;
+	position:static;
+	width:auto;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+	visibility:hidden;
+}
+
+
+/* Bar */
+
+.bar {
+	height:48px;
+	background:#222;
+	clear:both;
+	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.bar p {
+	color:white;
+	padding:10px 20px;
+	text-align:center;
+	font-weight:bold;
+	margin-bottom:0;
+}
+
+.bar a,
+.bar a:link,
+.bar a:active,
+.bar a:visited {
+	color:#fff;
+}
+
+.bar a:hover {
+	color:#f00842;
+}
+
+/* CLEARING */
+
+/* Use clearfix class on parent to clear nested columns, or wrap each row of columns in a <div class="row"> */
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+	content: '\0020';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.row:after,
+.clearfix:after {
+	clear: both;
+}
+
+.row, .clearfix {
+	zoom: 1;
+}
+
+/* You can also use a <br class="clear" /> to clear columns */
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+/* Selection */
+
+::selection,
+::-moz-selection,
+::-webkit-selection {
+	background: #FEEBB9;
+	color: #4E453A;
+	text-shadow: none;
+}
+
+img::selection,
+img::-moz-selection,
+img::-webkit-selection {
+	background-color: transparent;
+}
+
+/* This prevents selection being applied when you're clicking on or right clicking on a link */
+
+a:active::selection,
+a:active::-moz-selection,
+a:active::-webkit-selection {
+	background: transparent;
+	color:inherit;
+	text-shadow: none;
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* Tablet (Portrait) (768px) */
+/*----------------------------------------*/
+/* iPads and other tablets that view sites in a portrait orientation have styles put here */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+header[role="banner"],
+.container {
+	width:728px;
+}
+
+.col-1 {
+	width:354px;
+}
+
+article img {
+	max-width:728px;
+}
+
+p img {
+	padding-top:27px;
+}
+
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* Mobile (Portrait) (320px) */
+/*----------------------------------------*/
+/* Here's where the 320px Mobile (Portrait orientation) styles go */
+
+@media only screen and (max-width: 767px) {
+
+header[role="banner"],
+section[role="main"],
+.container,
+.col-1,
+nav[role="navigation"] ul,
+nav[role="navigation"] li,
+article{
+	width:300px;
+}
+
+.col-1 {
+	margin:0;
+}
+
+header[role="banner"] {
+	margin-bottom: 48px;
+}
+
+nav[role="navigation"] a.logo:hover,
+nav[role="navigation"] li a:hover {
+	border-bottom:0;
+}
+
+nav[role="navigation"] h1 {
+	padding: 10px 0 13px 0;
+	margin-bottom: 0;
+}
+
+nav[role="navigation"] li {
+	padding: 10px 0;
+	margin:0 0 0 0;
+}
+
+/* This is the hover colour for the menu items, #eee was too dark */
+nav[role="navigation"] h1:hover,
+nav[role="navigation"] li:hover {
+	background:#f5f5f5;
+}
+
+/* This is the divider border between the menu items - #888 was too dark */
+nav[role="navigation"] h1,
+nav[role="navigation"] li {
+	border-bottom:1px solid #bbb;
+}
+
+nav[role="navigation"] ul {
+	float:left;
+}
+
+.scriptogram-link {
+	position:relative;
+	right:0;
+}
+
+article img {
+	max-width:100%;
+	height:auto;
+	width:auto\9;
+}
+
+p img {
+	padding-top:11px;
+}
+
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* Mobile (Landscape) (480px) */
+/*----------------------------------------*/
+/* Here's where the 480px Mobile (Landscape orientation) styles go */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+header[role="banner"],
+section[role="main"],
+.container,
+.col-1,
+nav[role="navigation"] ul,
+nav[role="navigation"] li,
+article{
+	width:440px;
+}
+
+}
+
+/*----------------------------------------*/
+
+
+
+
+
+/*----------------------------------------*/
+/* PRINT STYLES */
+/*----------------------------------------*/
+/* In some cases, this isn't needed, people don't mind printing a website as is, but these styles make the printing a whole lot prettier */
+
+
+@media print {
+* {
+	background:transparent!important;
+	color:#000!important;
+	box-shadow:none!important;
+	text-shadow:none!important;
+	filter:none!important;
+	-ms-filter:none!important;
+}
+
+/* Black prints faster: h5bp.com/s */
+a,a:visited {
+	text-decoration:underline;
+}
+
+a[href]:after {
+	content:" (" attr(href) ")";
+}
+
+abbr[title]:after {
+	content:" (" attr(title) ")";
+}
+
+.ir a:after,a[href^=javascript:]:after,a[href^=#]:after {
+	content:"";
+}
+
+/* Don't show links for images, or javascript/internal links */
+pre,blockquote {
+	border:1px solid #999;
+	page-break-inside:avoid;
+}
+
+thead {
+	display:table-header-group;
+}
+
+/* h5bp.com/t */
+tr,img {
+	page-break-inside:avoid;
+}
+
+img {
+	max-width:100%!important;
+}
+
+@page {
+	margin:.5cm;
+}
+
+p,h2,h3 {
+	orphans:3;
+	widows:3;
+}
+
+h2,h3 {
+	page-break-after:avoid;
+}
+}
+
+/*----------------------------------------*/

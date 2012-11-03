@@ -20,10 +20,10 @@
 <!-- ABOUT THE SITE -->
 <!-------------------->
 
-<title>Home | Louis Bullock</title>
+<title>Ma | Louis Bullock</title>
 <meta name="description" content="The portfolio of Louis Bullock. Artist, and aspiring graphic designer.">
 <meta name="author" content="Louis Bullock">
-<link type="text/plain" rel="author" href="/humans.txt">
+<link type="text/plain" rel="author" href="http://louisbullock.com.au/humans.txt">
 <meta name="application-name" content="Louis Bullock" />
 
 
@@ -52,7 +52,7 @@
 <!-- STYLESHEETS -->
 <!-------------------->
 
-<link rel="stylesheet" type="text/css" href="./css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
 
 
 <!-------------------->
@@ -130,46 +130,104 @@
 
 <section role="main">
 
+
+<!-- Title goes here, as well as what the project is -->
+
+<h1 class="rb"><a href="/">Ma</a></h1>
+<h2>Website theme</h2>
+
+
+<!-- Main image -->
+
 <article>
 
 
 <!-- Descriptive text columns -->
+<style>
 
-<div class="col-1 row">
+.post .more {
+/* uncomment if you want there to be whitespace */
+display:none;
 
-<p>Hi, I'm Louis Bullock. Artist, & aspiring graphic designer.</p>
+visibility: hidden;
+}
 
-<p>Welcome to my portfolio.</p>
+.hide {
+display: none;
+}
+
+.post:target .more {
+display: block;
+
+visibility: visible;
+}
+
+.post:target .show {
+display: none;
+}
+
+.post:target .hide {
+display: inline-block;
+}
+
+</style>
+<div class="col-1">
+<div class="post" id="oct-20-12-5">
+<div class="content">
+
+<p><strong>Ma</strong> is a simple, clean theme for use with <a href="http://scriptogr.am">Scriptogr.am</a>.</p>
+
+<p>In the Japanese language, <em>Ma</em> roughly translates to 'gap', 'space', 'pause', or 'the space between two structural parts'.</p>
+
+<p><em>Ma</em> represents the negative space, between the positive space.</p>
+
+<p>Thus, <strong>Ma</strong> is designed with negative space in mind, with a focus on whitespace, yet retains a balance with the positive space (the content).</p>
+
+<p>Neat typography, built-in responsiveness, and an overall balanced aesthetic are cleverly integrated into <strong>Ma.</strong></p>
 
 </div>
 
-<!-- Projects -->
+<a href="#oct-20-12-5" class="show">+</a>
+<a href="#" class="hide">-</a>
+<div class="more">
 
-<div class="col-1 row">
-<a href="./work/ma/index.html"><img src="./img/blank.jpg" width="460px"></a>
-<h3 class="rb"><a href="./work/ma/index.html">Unknown</a></h3>
-<h4>Logo</h4>
+<p><strong>Ma</strong> was created for <a href="http://scriptogr.am">Scriptogr.am</a> because I desired a theme that was ultra clean and minimal.</p>
+
+<p>I drew inspiration from the principles I have been taught in my TAFE studies, and aimed to follow some, and break others.</p>
+
+<p>I believe that this theme is an embodiment of my own design philosophy, my love of whitespace and clean design. It shows my love of the Japanese aesthetic, and hints at the Swiss aesthetic.</p>
+
+</div>
+</div>
 </div>
 
-<div class="col-1 row end">
-<a href="./work/ma/index.html"><img src="./img/blank.jpg" width="460px"></a>
-<h3 class="rb"><a href="./work/ma/index.html">Unknown</a></h3>
-<h4>Logo</h4>
+<img src="../../img/ma-1.jpg" class="project scale">
+<img src="../../img/ma-2.jpg" class="project scale">
+<img src="../../img/ma-3.jpg" class="project scale">
+<img src="../../img/ma-4.jpg" class="project scale">
+
+<div class="col-1">
+
+<h3>Share</h3>
+
+<p><a href="https://www.facebook.com/sharer.php?u=http://louisbullock.com.au/work/ma/">Facebook</a></p>
+<p><a href="http://twitter.com/home?status=Ma+from+%40iamlouisbullock+http://louisbullock.com.au/work/ma/">Twitter</a></p>
+<p><a href="https://plus.google.com/share?url=http://louisbullock.com.au/work/ma/">Google+</a></p>
+<p><a href="http://pinterest.com/pin/create/button/?url=http://louisbullock.com.au/work/ma/&media=http://louisbullock.com.au/img/ma/ma-thumb.jpg&description=Ma Theme Project from Louis Bullock">Pinterest</a></p>
+
 </div>
 
-<div class="col-1 row">
-<a href="./work/ma/index.html"><img src="./img/blank.jpg" width="460px"></a>
-<h3 class="rb"><a href="./work/ma/index.html">Unknown</a></h3>
-<h4>Logo</h4>
+
+<div class="col-1 end">
+
+<h3>Other work</h3>
+
+<p><a href="/">RP Outcome</a></p>
+<p><a href="/">Goliath</a></p>
+<p><a href="/">Die Neue Grafik Design</a></p>
+<p><a href="/">Stasis</a></p>
+
 </div>
-
-<div class="col-1 row end">
-<a href="./work/ma/index.html"><img src="./img/blank.jpg" width="460px"></a>
-<h3 class="rb"><a href="./work/ma/index.html">Unknown</a></h3>
-<h4>Logo</h4>
-</div>
-
-
 
 </article>
 
@@ -181,7 +239,6 @@
 <!-------------------->
 <!-- FOOTER -->
 <!-------------------->
-
 <footer role="contentinfo">
 <section>
 <p><span class="uni">&copy;</span> 2012 Louis Bullock. Built with <a href="http://indexhibit.org">Indexhibit</a>.</p>
@@ -193,7 +250,7 @@
 <!-- SCRIPTS -->
 <!-------------------->
 
-<!-- Might need prefix free, might not -->
+<!-- Might need prefixfree, might not -->
 <!-- <script type="text/javascript" src="./js/prefixfree.min.js"></script> -->
 
 <!-- Gotta have jQuery -->

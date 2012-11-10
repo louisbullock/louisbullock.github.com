@@ -1,0 +1,44 @@
+<!DOCTYPE HTML5>
+<html>
+  <head>
+    <title>grfety - Multiplayer Drawing with SockJS and Canvas</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link href='http://fonts.googleapis.com/css?family=Jolly+Lodger' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <script src="http://cdn.sockjs.org/sockjs-0.2.min.js" type="text/javascript"></script>
+    <script src="grfety.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      window.onload = function(){
+        grfety.init();
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>grfety</h1>
+      <div id="tools">
+        <div id="bushes">
+          <select id='brushselect'></select>
+        </div>
+        <div id="size">
+          <input id="sizerange" type="range" min="1" max="100" value="1" step="1">
+        </div>
+        <a id="color1" class="color activecolor" href="#">color1</a>
+        <a id="color2" class="color" href="#">color2</a>
+        <a id="color3" class="color" href="#">color3</a>
+        <div id="alpha">
+          <input id="alpharange" type="range" min="1" max="100" value="100" step="1">
+        </div>
+        <a id="save" href="#">&#10003;</a>
+        <div id='users'>
+          <span id='usercount'></span> Users
+        </div>
+      </div>
+    </header>
+    <canvas></canvas>
+  </body>
+</html>

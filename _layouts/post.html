@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div id="single-post" class="post">
+    <h2><a href="{{page.url}}">{{page.title}}</a></h2>
+    <span>{{ page.date | date: "%d %B %Y" }}</span>
+    <hr />
+    <p>{{page.content}}</p>
+    <hr />
+    {% if page.twitterusername %}<span class="meta right">via <a href="http://twitter.com/{{page.twitterusername}}">{{page.twitterusername}}</a></span>{% endif %}
+
+    <span class="left meta"><a href="https://twitter.com/intent/tweet?text={{page.title}}&amp;url=http://louisbullock.com.au{{page.url}}{% if page.twitterusername %}&amp;via={{page.twitterusername}}{% endif %}" target="_BLANK">tweet</a></span>
+</div>
+<div class="clearfix"></div>
+
+<a id="seeMore" href="/archive/">see more</a>
+
+<div id="page-navigation">
+        <div class="clear">&nbsp;</div>
+        <div class="left">
+        {% if page.previous.url %}
+                <a href="{{page.previous.url}}" title="Previous Post:
+{{page.previous.title}}">&laquo; {{page.previous.title}}</a>
+        {% endif %}
+        </div>
+
+        <div class="right">
+        {% if page.next.url %}
+                <a href="{{page.next.url}}" title="next Post:
+{{page.next.title}}">{{page.next.title}} &raquo; </a>
+        {% endif %}
+        </div>
+        <div class="clear">&nbsp;</div>
+</div>

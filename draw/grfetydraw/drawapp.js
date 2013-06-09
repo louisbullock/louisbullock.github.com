@@ -1,38 +1,38 @@
 (function(root){
 
     //set up namespace
-    var grfety = typeof exports != 'undefined' ? exports : root.grfety = {}
+    var drawapp = typeof exports != 'undefined' ? exports : root.drawapp = {}
 
     // set stored x/y position to current touch/cursor location
     function setXY(e){
         var headerheight = document.getElementsByTagName('header')[0].offsetHeight;
         if (e.targetTouches){
-            grfety.x = e.targetTouches[0].pageX;
-            grfety.y = e.targetTouches[0].pageY - headerheight;
+            drawapp.x = e.targetTouches[0].pageX;
+            drawapp.y = e.targetTouches[0].pageY - headerheight;
         } else {
-            grfety.x = e.pageX;
-            grfety.y = e.pageY - headerheight;
+            drawapp.x = e.pageX;
+            drawapp.y = e.pageY - headerheight;
         }
     }
 
     // draw line from last x/y to current x/y and add coords to path buffer
     function draw(e){
-        with(grfety.context){
-            if (grfety.down){
+        with(drawapp.context){
+            if (drawapp.down){
                 setXY(e);
                 if (e.button === 2) {
-                    grfety.c = 'rgb(0,0,0)';
+                    drawapp.c = 'rgb(0,0,0)';
                 }
                 var line = {
-                    'x':grfety.x,
-                    'y':grfety.y,
-                    'c':grfety.c,
-                    'w':grfety.w,
-                    'b':grfety.b
+                    'x':drawapp.x,
+                    'y':drawapp.y,
+                    'c':drawapp.c,
+                    'w':drawapp.w,
+                    'b':drawapp.b
                 };
-                grfety.path.push(line);
-                if (grfety.path.length > 1){
-                    grfety.brushes[grfety.b].draw(line)
+                drawapp.path.push(line);
+                if (drawapp.path.length > 1){
+                    drawapp.brushes[drawapp.b].draw(line)
                 }
             }
         }
@@ -40,20 +40,20 @@
 
     // start a new path buffer
     function start(e){
-        grfety.down = true;
-        grfety.path = [];
+        drawapp.down = true;
+        drawapp.path = [];
         setXY(e);
     }
 
     // send current path buffer to server
     function end(e){
-        grfety.down = false;
-        sock.send(JSON.stringify({'type':'path','path':grfety.path}))
+        drawapp.down = false;
+        sock.send(JSON.stringify({'type':'path','path':drawapp.path}))
     }
 
     // save the canvas to a file
     function save(){
-        var buffer = grfety.context;
+        var buffer = drawapp.context;
         var w = buffer.canvas.width;
         var h = buffer.canvas.height;
         with(buffer){
@@ -100,21 +100,21 @@
             if (data.type == 'snapshot'){
                 window.snapshot = new Image();
                 window.snapshot.onload = function(){
-                    grfety.context.drawImage(window.snapshot,0,0);
+                    drawapp.context.drawImage(window.snapshot,0,0);
                 }
                 window.snapshot.src = data.snapshot;
             }
             if (data.type == 'path'){
-                with(grfety.context){
-                    grfety.path = []
+                with(drawapp.context){
+                    drawapp.path = []
                     while(data.path.length > 0){
                         var item = data.path.pop()
-                        grfety.path.push(item);
-                        if (grfety.path.length > 1){
-                            grfety.brushes[item.b].draw(item)
+                        drawapp.path.push(item);
+                        if (drawapp.path.length > 1){
+                            drawapp.brushes[item.b].draw(item)
                         }
                     };
-                    grfety.path = []
+                    drawapp.path = []
                 };
             }
             if (data.type == 'stats'){
@@ -144,16 +144,16 @@
         // set up brush select box
 
         var select = document.getElementsByTagName('select')[0];
-        Object.keys(grfety.brushes).forEach(function(brush){
+        Object.keys(drawapp.brushes).forEach(function(brush){
             var option = new Option(brush,brush);
             select.options[select.options.length] = option;
         })
 
 
         // build canvas and set up events
-        grfety.canvas = document.getElementsByTagName('canvas')[0];
-        grfety.context = grfety.canvas.getContext('2d');
-        with(grfety.context){
+        drawapp.canvas = document.getElementsByTagName('canvas')[0];
+        drawapp.context = drawapp.canvas.getContext('2d');
+        with(drawapp.context){
             canvas.style.position = 'fixed';
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -180,14 +180,14 @@
 
         // set up toolbar events
         with(document){
-            getElementById('color1').style.background = grfety.color1;
-            getElementById('color2').style.background = grfety.color2;
-            getElementById('color3').style.background = grfety.color3;
+            getElementById('color1').style.background = drawapp.color1;
+            getElementById('color2').style.background = drawapp.color2;
+            getElementById('color3').style.background = drawapp.color3;
             addEventListener("fullscreenchange", toggleaside, false);
             addEventListener("mozfullscreenchange", toggleaside, false);
             addEventListener("webkitfullscreenchange", toggleaside, false);
             getElementsByTagName('select')[0].addEventListener('change', function(e){
-                grfety.b = e.target.value;
+                drawapp.b = e.target.value;
             });
             getElementById('save').addEventListener('click', function(e){
                 e.preventDefault();
@@ -195,26 +195,26 @@
                 return false;
             });
             getElementById('sizerange').addEventListener('change', function(e){
-                grfety.w = e.target.value;
+                drawapp.w = e.target.value;
             });
             getElementById('alpharange').addEventListener('change', function(e){
-                grfety.a = e.target.value;
-                grfety.context.globalAlpha = e.target.value / 100;
+                drawapp.a = e.target.value;
+                drawapp.context.globalAlpha = e.target.value / 100;
             });
             getElementById('color1').addEventListener('click', function(e){
                 swapClass(e,'activecolor');
-                grfety.c = grfety.color1;
-                grfety.colora = grfety.color1;
+                drawapp.c = drawapp.color1;
+                drawapp.colora = drawapp.color1;
             });
             getElementById('color2').addEventListener('click', function(e){
                 swapClass(e,'activecolor');
-                grfety.c = grfety.color2;
-                grfety.colora = grfety.color2;
+                drawapp.c = drawapp.color2;
+                drawapp.colora = drawapp.color2;
             });
             getElementById('color3').addEventListener('click', function(e){
                 swapClass(e,'activecolor');
-                grfety.c = grfety.color3;
-                grfety.colora = grfety.color3;
+                drawapp.c = drawapp.color3;
+                drawapp.colora = drawapp.color3;
             });
         }
 
@@ -232,55 +232,55 @@
 
     // global exports
 
-    grfety.init = init;
-    grfety.w = 1;
-    grfety.c = 'rgb(255,255,255)';
-    grfety.b = 'pencil';
-    grfety.color1 = 'rgb(180,0,0)';
-    grfety.color2 = 'rgb(0,180,0)';
-    grfety.color3 = 'rgb(0,0,180)';
-    grfety.colora = grfety.color1;
-    grfety.init = init;
-    grfety.brushes = {};
+    drawapp.init = init;
+    drawapp.w = 1;
+    drawapp.c = 'rgb(255,255,255)';
+    drawapp.b = 'pencil';
+    drawapp.color1 = 'rgb(180,0,0)';
+    drawapp.color2 = 'rgb(0,180,0)';
+    drawapp.color3 = 'rgb(0,0,180)';
+    drawapp.colora = drawapp.color1;
+    drawapp.init = init;
+    drawapp.brushes = {};
 
     // brush modules
 
-    grfety.brushes['pencil'] = {
+    drawapp.brushes['pencil'] = {
         draw : function(line){
-            with(grfety.context){
+            with(drawapp.context){
                 strokeStyle = line.c;
                 lineWidth = line.w;
                 beginPath();
                 moveTo(
-                    grfety.path[grfety.path.length -1].x,
-                    grfety.path[grfety.path.length -1].y
+                    drawapp.path[drawapp.path.length -1].x,
+                    drawapp.path[drawapp.path.length -1].y
                 );
                 lineTo(
-                    grfety.path[grfety.path.length -2].x,
-                    grfety.path[grfety.path.length -2].y
+                    drawapp.path[drawapp.path.length -2].x,
+                    drawapp.path[drawapp.path.length -2].y
                 );
                 stroke();
             }
         }
     }
 
-    grfety.brushes['randlines'] = {
+    drawapp.brushes['randlines'] = {
         rand : function(){
             return Math.random()*3-1.5;
         },
         draw : function(line){
-            with(grfety.context){
+            with(drawapp.context){
                 strokeStyle = line.c;
                 lineWidth = 0.05;
                 for (i=1;i<50;i++){
                     beginPath();
                     moveTo(
-                        grfety.path[grfety.path.length -1].x + this.rand() * line.w,
-                        grfety.path[grfety.path.length -1].y + this.rand() * line.w
+                        drawapp.path[drawapp.path.length -1].x + this.rand() * line.w,
+                        drawapp.path[drawapp.path.length -1].y + this.rand() * line.w
                     );
                     lineTo(
-                        grfety.path[grfety.path.length -2].x + this.rand() * line.w,
-                        grfety.path[grfety.path.length -2].y + this.rand() * line.w
+                        drawapp.path[drawapp.path.length -2].x + this.rand() * line.w,
+                        drawapp.path[drawapp.path.length -2].y + this.rand() * line.w
                     );
                     stroke();
                 }
@@ -288,21 +288,21 @@
         }
     }
 
-    grfety.brushes['fishnet'] = {
+    drawapp.brushes['fishnet'] = {
         draw : function(line){
-            with(grfety.context){
+            with(drawapp.context){
                 strokeStyle = line.c;
                 lineWidth = line.w / 100 * 5;
-                if (grfety.path.length > 15){
+                if (drawapp.path.length > 15){
                     for (i=1;i<15;i++){
                         beginPath();
                         moveTo(
-                            grfety.path[grfety.path.length -1].x,
-                            grfety.path[grfety.path.length -1].y
+                            drawapp.path[drawapp.path.length -1].x,
+                            drawapp.path[drawapp.path.length -1].y
                         );
                         lineTo(
-                            grfety.path[grfety.path.length -i].x,
-                            grfety.path[grfety.path.length -i].y
+                            drawapp.path[drawapp.path.length -i].x,
+                            drawapp.path[drawapp.path.length -i].y
                         );
                         stroke();
                     }
@@ -311,25 +311,25 @@
         }
     }
 
-    grfety.brushes['furry'] = {
+    drawapp.brushes['furry'] = {
         draw : function(line){
-            with(grfety.context){
+            with(drawapp.context){
                 strokeStyle = line.c;
                 lineWidth = line.w / 100 * 5;
-                for (var i=1;i<grfety.path.length;i++){
+                for (var i=1;i<drawapp.path.length;i++){
                     var e = -Math.random()
-                    var b = grfety.path[grfety.path.length -1].x - grfety.path[grfety.path.length -i].x
-                    var a = grfety.path[grfety.path.length -1].y - grfety.path[grfety.path.length -i].y
+                    var b = drawapp.path[drawapp.path.length -1].x - drawapp.path[drawapp.path.length -i].x
+                    var a = drawapp.path[drawapp.path.length -1].y - drawapp.path[drawapp.path.length -i].y
                     var h = b * b + a * a;
                     if (h < (2000*line.w) && Math.random() > h / (2000*line.w)) {
                         beginPath();
                         moveTo(
-                            grfety.path[grfety.path.length -2].x + (b * e),
-                            grfety.path[grfety.path.length -2].y + (a * e)
+                            drawapp.path[drawapp.path.length -2].x + (b * e),
+                            drawapp.path[drawapp.path.length -2].y + (a * e)
                         );
                         lineTo(
-                            grfety.path[grfety.path.length -1].x - (b * e) + e * 2,
-                            grfety.path[grfety.path.length -1].y - (a * e) + e * 2
+                            drawapp.path[drawapp.path.length -1].x - (b * e) + e * 2,
+                            drawapp.path[drawapp.path.length -1].y - (a * e) + e * 2
                         );
                         stroke();
                     }
